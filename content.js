@@ -13,7 +13,6 @@ async function run() {
         const timer = document
           .querySelectorAll(".cardr3")
           [i].querySelector(".card-body button span").innerText;
-        console.log(timer);
         if (parseInt(timer[0]) <= 3) {
           //clica na engranagem
           document
@@ -38,7 +37,11 @@ async function run() {
       }
       await sleep(60000);
     }
-    await sleep(1000);
+    if (window.location.pathname === "/home") {
+      console.log("go to inventory");
+      document.querySelector(".navbar-nav li:nth-child(4) a").click();
+    }
+    await sleep(5000);
   }
 }
 
